@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/snow2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/snow1.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xduqinian.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="国三啦！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第七届团体程序设计天梯赛">
+<meta property="og:url" content="https://xduqinian.github.io/2022/04/05/CodingLog/index.html">
+<meta property="og:site_name" content="年雨冰季的博客">
+<meta property="og:description" content="国三啦！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xduqinian.github.io/2022/04/05/CodingLog/1.png">
+<meta property="article:published_time" content="2022-04-05T13:15:02.000Z">
+<meta property="article:modified_time" content="2022-09-14T07:54:32.242Z">
+<meta property="article:author" content="七年">
+<meta property="article:tag" content="c4">
+<meta property="article:tag" content="code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xduqinian.github.io/2022/04/05/CodingLog/1.png">
+
+<link rel="canonical" href="https://xduqinian.github.io/2022/04/05/CodingLog/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>第七届团体程序设计天梯赛 | 年雨冰季的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="id-header-inner" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <!-- 添加了id，后面改变css样式用 -->
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">年雨冰季的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-友链">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+   <!-- 改变css样式 -->
+    <script type="text/javascript">
+      var url = document.location.pathname;
+      var folderName = url.substr(1, url.length - 2)
+      console.log(folderName);
+
+      var listPostUrl = [
+        "/" + folderName + "/" + "post-banner.png",
+        "/" + folderName + "/" + "post-banner.jpg",
+      ];
+
+      var nSuccessCount = 0;
+      var nResponceCount = 0;
+      function OnHttpResponse(bSuccess, strUrl) {
+        console.log("OnHttpResponse: " + bSuccess + ", " + strUrl);
+        nResponceCount++;
+        if(nSuccessCount > 0){
+          return;
+        }
+        if(bSuccess) {
+          nSuccessCount++;
+          document.getElementById("id-header-inner").style.backgroundImage = "url(" + strUrl + ")";
+        }
+        if(nResponceCount >= listPostUrl.length && nSuccessCount <= 0){
+        // 使用默认图
+          document.getElementById("id-header-inner").style.backgroundImage = "url(/images/back.jpg)";
+        }
+      }
+
+      function changeBanner(strPostUrl, nIndex){
+        console.log("try to load" + strPostUrl);
+        var xmlhttp;
+        if (window.XMLHttpRequest){
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+        }
+        else{
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function(){
+          if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            OnHttpResponse(true, strPostUrl);
+          } 
+          else {
+            OnHttpResponse(false, strPostUrl);
+          }
+        }
+        xmlhttp.open("HEAD",strPostUrl,true);
+        xmlhttp.send();
+      }
+
+      listPostUrl.forEach(changeBanner);
+    </script>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xduqinian.github.io/2022/04/05/CodingLog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="七年">
+      <meta itemprop="description" content="<p>自由之思想，独立之精神。</p>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="年雨冰季的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第七届团体程序设计天梯赛
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-05 21:15:02" itemprop="dateCreated datePublished" datetime="2022-04-05T21:15:02+08:00">2022-04-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-14 15:54:32" itemprop="dateModified" datetime="2022-09-14T15:54:32+08:00">2022-09-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">算法与数据结构</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/04/05/CodingLog/" class="post-meta-item leancloud_visitors" data-flag-title="第七届团体程序设计天梯赛" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/04/05/CodingLog/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/05/CodingLog/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>国三啦！</p>
+<p><img src="/images/loading.jpg" data-original="/2022/04/05/CodingLog/1.png" alt></p>
+<span id="more"></span>
+<h1 id="赛后感想"><a href="#赛后感想" class="headerlink" title="赛后感想"></a>赛后感想</h1><p>今年整体来讲题目确实是比去年要难一点，L1做到后面就开始有点思维了，看到L2-3和L3-1以后就果断放弃拿国二的想法，好在运气好最后拿了个国三。总之，不打铁就算成功！</p>
+<ul>
+<li>L1-1输出一句话，L1-2整数除法，这种5分水题就没啥好说了。</li>
+<li>L1-3条件分支，一开始把输入的两个年龄比大小换了一下，拿了7分，后来发现要按输入的顺序输出，最后写完L1-8才重新改回来。难度倒是不大，就是有点麻烦，得静下心来。</li>
+<li>L1-4是啥忘记了，就记得当时一遍就莽过去了。</li>
+<li>L1-5好像是丢骰子的题，直接记录出现过的点数写个循环。</li>
+<li>L1-6字符串，给了伪代码，读懂题意后就直接莽过去。</li>
+<li>L1-7看了眼数据有十万，开二维数组显然不现实，就给每一行每一列设计一个标记（做过八皇后的话对这种套路应该不陌生），最后记录被boss放过技能的行数和列数，然后输出$n<em>m-cnt1</em>m-cnt2<em>n+cnt1</em>cnt2$。总数减去行格数减去列格数再加上重复部分。</li>
+<li>L1-8一开始还以为是排序题，后来发现只要是天梯赛175及以上且PAT分数达标的第一次就会被推过去，所以就先记下这部分人数，然后对175分及以上但PAT分数不够的用map记下来，然后k次迭代遍历map计数，就得出了答案。</li>
+<li>L2-1松针，和去年的包装机差不多，一个队列推松针，一个栈临时存松针，就一个比较繁琐的模拟，要注意各种边界条件。</li>
+<li>L2-2排序题，最后加上00:00:00和23:59:59，再处理一下输出就行。</li>
+<li>L2-4大众情人，要求找异性缘最大的男性和女性，其实就是找在异性眼中最大距离最小的男性和女性。用Floyd就可以求出两两之间的距离，不过要注意这是有向图。最后就找答案输出。</li>
+<li>L3-1据说正解是拓扑排序，那时候在想怎么存两个字符串的大小关系，搞了半天没调出来直接开摆，就写了n=1的情况，拿了一分。</li>
+<li>L2-3最后十五分钟想出来暴搜且返回根结点，最后再减去最深的那段路径，但是来不及了。</li>
+</ul>
+<p>拿个奖退役，还行。</p>
+<h1 id="注意的东西"><a href="#注意的东西" class="headerlink" title="注意的东西"></a>注意的东西</h1><ol>
+<li><p>如果选择对输入一个个读入，循环体不能随便break，因为可能会导致该询问的输出 输出到下个询问。</p>
+</li>
+<li><p>比较麻烦的字符串处理题，可以先考虑简化版怎么处理，再加上特殊判断。</p>
+</li>
+<li><p>结构体重载运算符作比较时，可以再写一个比较函数cmp进行基本比较，然后再在重载运算符里写总的比较规则，遇到重复的基本比较时就可以调用cmp，简化了代码。</p>
+</li>
+<li><p>优先队列默认大根堆，小根堆要修改。<strong>小根堆要重载大于号，大根堆要重载小于号。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="keyword">int</span>,vector&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;q;</span><br><span class="line"><span class="comment">//可以记成 &lt;类型,&lt;存储方式&gt;,&lt;比较函数&gt; &gt;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>;</span></span><br><span class="line">priority_queue&lt;node,vector&lt;node&gt;,greater&lt;node&gt; &gt; coll;</span><br><span class="line"><span class="comment">//一样的道理，但是这个node只能是结构体，不能是define的定义</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>看清楚题目有没有说第一个是根，有没有说按顺序输入。没有的话，要注意。</p>
+</li>
+<li><p>pair的声明</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pis pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line">pis a={<span class="number">1</span>,<span class="number">2</span>};</span><br><span class="line">cout&lt;&lt;a.first&lt;&lt;<span class="string">" "</span>&lt;&lt;a.second&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完全二叉树用数组存储，只要知道任意四种遍历方式的一种，就可以给数组填上值构造出完全二叉树。</p>
+</li>
+<li><p><code>std::string</code> 的方法 <code>find</code>，返回值类型是<code>std::string::size_type</code>， 对应的是查找对象在字符串中的位置（从0开始），如果未查找到，该返回值是一个很大的数据（4294967295），判断时与 <code>std::string::npos</code>进行对比。</p>
+</li>
+<li><p>无穷大的定义<code>const int inf=0x3f3f3f3f;</code></p>
+</li>
+<li><p>L2 的题先想明白思路，规划好怎么写，再开始写。</p>
+</li>
+<li><p>看清楚题目给出的每个量的数据范围，是不是正数，是不是整数，这些很重要。</p>
+</li>
+<li><p>是小于还是大于还是小于等于还是大于等于还是等于还是不等于，想清楚。</p>
+</li>
+<li><p><code>printf("%.2lf\n",ans)</code>保留两位小数，四舍六入五成双。若五后有大于0的有效数字，五入，否则看五前面是奇数还是偶数，凑偶。所以说保留整数时，用强制类型转换，因为强转是截断式的。要四舍五入时，就加0.5再强转。</p>
+</li>
+<li><p>求是否有公共祖先时，可以把祖先放到set里，如果放进去set大小不变说明有重复，就说明有公共祖先。</p>
+</li>
+<li><p>五代以内没有公共祖先的意思是各自的四代都没有对方的祖先，对方的祖先可以不在四代以内。</p>
+</li>
+<li><p>cin cout 加速</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cin cout 的加速</span></span><br><span class="line">ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//str的pos位置前插入str1,注意若pos是循环的下表，pos要加上插入字符串的长度</span></span><br><span class="line">str.<span class="built_in">insert</span>(pos,str1);</span><br><span class="line"><span class="comment">//返回从str的pos开始长度为len的子串，记得前面要加个str=，不然相当于啥也没干</span></span><br><span class="line">str=str.<span class="built_in">substr</span>(pos,len);</span><br><span class="line"><span class="comment">//创建一个输入流ss，内容是str</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="function">stringstream <span class="title">ss</span><span class="params">(str)</span></span>;</span><br><span class="line"><span class="keyword">while</span>(ss&gt;&gt;str)</span><br><span class="line"><span class="comment">//把字母变成小写</span></span><br><span class="line"><span class="built_in">tolower</span>(<span class="keyword">char</span> x)</span><br><span class="line"><span class="comment">//返回从pos开始找str1的第一个位置    </span></span><br><span class="line">str.<span class="built_in">find</span>(pos,str1)</span><br></pre></td></tr></table></figure>
+<h2 id="哈夫曼树和哈夫曼编码"><a href="#哈夫曼树和哈夫曼编码" class="headerlink" title="哈夫曼树和哈夫曼编码"></a>哈夫曼树和哈夫曼编码</h2><ol>
+<li>哈夫曼树的带权路径长度 = 非叶子结点的权值之和。可以用小根堆计算。</li>
+<li>判断哈夫曼编码的合法性：<ul>
+<li>带权路径和对不对。小根堆。</li>
+<li>有无前缀。<code>str.find()</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="迪杰特斯拉求单源最短路"><a href="#迪杰特斯拉求单源最短路" class="headerlink" title="迪杰特斯拉求单源最短路"></a>迪杰特斯拉求单源最短路</h2><p><strong>问题</strong>：n个点，m条带权边，求从起点s到终点d的最短路径长度。</p>
+<h3 id="二维数组存图"><a href="#二维数组存图" class="headerlink" title="二维数组存图"></a>二维数组存图</h3><ul>
+<li>创建一个二维数组，初始化置为无穷大。<code>const int inf=0x3f3f3f3f;</code><ul>
+<li><code>fill(e[0],e[0]+n*n,inf);</code></li>
+</ul>
+</li>
+<li><code>dist[i]</code> 表示从源点s到图中各点的最短路径长度，<code>dist[i]</code>是在动态变化的，每迭代一次都会产生一个不会再变化的dist数据。n次迭代后得到最终的dist。dist初始化也置为正无穷，表示无穷远。</li>
+<li><code>dist[s]=0;</code> 设置起点的最短路径就是0。</li>
+<li><code>bool vis[i]</code>表示i点是否已经得到最短路径。因为每次迭代我们都会得到一个最短路径，所以我们每次都把得到最短路径的结点标记一下，表示加入已找到最短路径的集合S。</li>
+<li>查找下一个点。遍历dist，找到离S最近的那个点，将其加入S。</li>
+<li>关于新加入的结点u维护dist数组，对于不在S中的结点，若两点间有路径（即<code>e[u][v]!=inf</code>）,<code>if dist[v]&gt;dist[u]+e[u][v]  dist[v]=dist[u]+e[u][v]</code>。</li>
+<li>最后我们就得到了一个dist数组，表示最短路径。</li>
+<li><code>pre[i]</code>表示结点的最短路径的前驱结点，用于打印最短路径，写个递归就可以了。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805046380707840/problems/994805073643683840">紧急救援</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,s,d;</span><br><span class="line"><span class="keyword">int</span> w[<span class="number">505</span>],e[<span class="number">505</span>][<span class="number">505</span>],cnt1[<span class="number">505</span>],cnt2[<span class="number">505</span>],dist[<span class="number">505</span>],pre[<span class="number">505</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">505</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span></span>{</span><br><span class="line">	<span class="keyword">if</span>(x==s){</span><br><span class="line">		cout&lt;&lt;s;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">print</span>(pre[x]);</span><br><span class="line">	cout&lt;&lt;<span class="string">" "</span>&lt;&lt;x;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;d;</span><br><span class="line">	<span class="built_in">fill</span>(dist,dist+<span class="number">505</span>,inf);</span><br><span class="line">	<span class="built_in">fill</span>(e[<span class="number">0</span>],e[<span class="number">0</span>]+<span class="number">505</span>*<span class="number">505</span>,inf);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) cin&gt;&gt;w[i];</span><br><span class="line">	<span class="keyword">int</span> u,v,val;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++){</span><br><span class="line">		cin&gt;&gt;u&gt;&gt;v&gt;&gt;val;</span><br><span class="line">		e[u][v]=val;</span><br><span class="line">		e[v][u]=val;</span><br><span class="line">	}</span><br><span class="line">	dist[s]=<span class="number">0</span>;</span><br><span class="line">	cnt1[s]=<span class="number">1</span>;</span><br><span class="line">	cnt2[s]=w[s];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		u=<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">int</span> minn=inf;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++){</span><br><span class="line">			<span class="keyword">if</span>(vis[j]==<span class="literal">false</span>&amp;&amp;dist[j]&lt;minn){</span><br><span class="line">				minn=dist[j];</span><br><span class="line">				u=j;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(u==<span class="number">-1</span>) <span class="keyword">break</span>;</span><br><span class="line">		vis[u]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> v=<span class="number">0</span>;v&lt;n;v++){</span><br><span class="line">			<span class="keyword">if</span>(vis[v]==<span class="literal">false</span>&amp;&amp;e[u][v]!=inf){</span><br><span class="line">				<span class="keyword">if</span>(dist[v]&gt;dist[u]+e[u][v]){</span><br><span class="line">					dist[v]=dist[u]+e[u][v];</span><br><span class="line">					cnt1[v]=cnt1[u];</span><br><span class="line">					cnt2[v]=cnt2[u]+w[v];</span><br><span class="line">					pre[v]=u;</span><br><span class="line">				}<span class="keyword">else</span> <span class="keyword">if</span>(dist[v]==dist[u]+e[u][v]){</span><br><span class="line">					cnt1[v]=cnt1[v]+cnt1[u];</span><br><span class="line">					<span class="keyword">if</span>(cnt2[v]&lt;cnt2[u]+w[v]){</span><br><span class="line">						cnt2[v]=cnt2[u]+w[v];</span><br><span class="line">						pre[v]=u;</span><br><span class="line">					}</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;cnt1[d]&lt;&lt;<span class="string">" "</span>&lt;&lt;cnt2[d]&lt;&lt;endl;</span><br><span class="line">	<span class="built_in">print</span>(d);</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="Set-和-Vector"><a href="#Set-和-Vector" class="headerlink" title="Set 和 Vector"></a>Set 和 Vector</h2><ol>
+<li>声明一个vector数组，里面放的是一堆set。</li>
+<li>输入数据时先生成set，再把集合push_back到vector中。</li>
+<li>set的遍历，<code>auto it=s.begin();it!=s.end();it++</code>，这里的<code>auto</code>相当于<code>set&lt;int&gt;::iterator</code>，<code>it</code>是一个指针。</li>
+<li><code>S.find(x)</code>返回一个指针，指向找到的元素的位置，如果找不到则返回<code>s.end()</code>。可以据此判断是否存在。</li>
+<li>vector 向量，可以比较大小，有点字典序的意思。</li>
+</ol>
+<h2 id="map-和-multimap"><a href="#map-和-multimap" class="headerlink" title="map 和 multimap"></a>map 和 multimap</h2><p>c++ 中 map 不仅可以用于映射，还可以用于排序。</p>
+<p>map的底层实现是红黑树，在存储的时候是按键值从小到大排序的。</p>
+<p>对于多值的排序可以直接对vector排序，将vector作为map的键值，利用map自动排序，就不用结构体重载运算符啦。</p>
+<p>特别是<strong>存在重复数据且重复数据不一起参与排序的情况下，用map来排序很不错</strong>。还可以<strong>利用map的映射性质对重复数量记录</strong>。</p>
+<p>multimap不同于map的地方在于，map不允许相同的键值存在，而multimap允许，所以multimap也就没有了 [] 的操作。</p>
+<p>multimap也是从小到大遍历的，可以用multimap作允许重复键值的排序，<strong>对于键值重复的项，按输入顺序排序</strong>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line">map&lt;vector&lt;<span class="keyword">int</span>&gt;,<span class="keyword">int</span>&gt; q;</span><br><span class="line">multimap&lt;<span class="keyword">int</span>,vector&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt;&gt; ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	a.<span class="built_in">resize</span>(m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++) cin&gt;&gt;a[j];</span><br><span class="line">		q[a]++;</span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;q.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it:q) ans.<span class="built_in">insert</span>({it.second,it.first});</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it:ans){</span><br><span class="line">		cout&lt;&lt;it.first;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">auto</span> it2:it.second) cout&lt;&lt;<span class="string">" "</span>&lt;&lt;it2;</span><br><span class="line">		cout&lt;&lt;endl;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="关于大模拟"><a href="#关于大模拟" class="headerlink" title="关于大模拟"></a>关于大模拟</h2><p><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805046380707840/problems/994805054698012672">L2-028 秀恩爱分得快</a></p>
+<p>10号打训练赛被这道大模拟给卡住了，这种东西没想清楚就上手真的很容易出奇怪的问题，就总结一下写大模拟的一些方法论。</p>
+<p>首先最重要的是，读题目<strong>打草稿</strong>，不要上来就瞎打。通过打草稿理清思路，敲起代码来才能胸有成竹，调试的时候也可以有条不紊。</p>
+<h3 id="如何读入？如何输出？"><a href="#如何读入？如何输出？" class="headerlink" title="如何读入？如何输出？"></a>如何读入？如何输出？</h3><p>有些大模拟题的读入和输出就会很复杂，要根据实际问题决定使用什么样的输入输出，有时候输入输出比较复杂的时候，可以考虑自己写<code>read()</code>和<code>print()</code>函数。</p>
+<h3 id="如何存储输入的数据"><a href="#如何存储输入的数据" class="headerlink" title="如何存储输入的数据"></a>如何存储输入的数据</h3><p>存储是很重要的，要考虑用什么样的数据结构，用什么样的存储结构来实现数据结构。不同的存储方式反映数据间关系的难易程度是不同的。对于一些复杂的实体，可以<code>struct</code>一个结构体，再在结构体内部定义我们需要的成员变量。在思考存储方式的时候可以适当联想之后我们要怎么实现任务，让存储方式有助于任务的实现。</p>
+<h3 id="完成任务需要哪些步骤？如何实现这些步骤？"><a href="#完成任务需要哪些步骤？如何实现这些步骤？" class="headerlink" title="完成任务需要哪些步骤？如何实现这些步骤？"></a>完成任务需要哪些步骤？如何实现这些步骤？</h3><p>在草稿纸上简单写一下解决问题的流程，可以用自然语言描述这些步骤。然后思考怎么用程序语言实现这些步骤。</p>
+<p>这个过程相当于把一个任务放在了流水线上，将其分割成几个线性有序的步骤，然后逐个考虑每个步骤的实现。当每个步骤都实现了以后，整个任务就实现了。</p>
+<p>对于一些比较复杂的步骤可以用函数封装起来，在写主流程的时候再调用，可以简化代码，有利于调试。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>用<code>read</code>读取编号并处理性别，<code>vis</code>数组存储性别。</p>
+<p>结构体 <code>photo</code>存放照片信息，分男女存，<code>cnt0</code>表示男性数量，<code>cnt1</code>表示女性数量，<code>num</code>表示总人数。</p>
+<p>参数<code>maxa</code>和<code>maxb</code>表示a和b的最亲密异性的亲密值，<code>sumn</code>表示a和b的异性亲密值。</p>
+<h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ol>
+<li>存储好数据。</li>
+<li>对每张照片，如果照片中有a或b，就计算这张照片中a和b的异性亲密值。</li>
+<li>找到a、b和异性的最大亲密值。</li>
+<li>若a和b是彼此最亲密的人，输出为第一种情况。</li>
+<li>否则，寻找最亲密的人，输出为第二种情况。</li>
+</ol>
+<p>上述流程一定是可以完成任务的。</p>
+<p>为了简化流程，用自己写的<code>find</code>和 <code>count</code>函数完成 照片中是否有a或b的判断 和 异性亲密值的计算。</p>
+<h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">photo</span>{</span></span><br><span class="line">	<span class="keyword">int</span> num,cnt0,cnt1;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; boy;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; girl;</span><br><span class="line">}p[<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,a,b,k;</span><br><span class="line"><span class="keyword">double</span> sumn[<span class="number">1005</span>],maxa,maxb;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">bool</span> flag=<span class="literal">false</span>;</span><br><span class="line">	string str;</span><br><span class="line">	cin&gt;&gt;str;</span><br><span class="line">	<span class="keyword">if</span>(str[<span class="number">0</span>]==<span class="string">'-'</span>){</span><br><span class="line">		flag=<span class="literal">true</span>;</span><br><span class="line">		str=str.<span class="built_in">substr</span>(<span class="number">1</span>,str.<span class="built_in">length</span>()<span class="number">-1</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="function">stringstream <span class="title">ss</span><span class="params">(str)</span></span>;</span><br><span class="line">	<span class="keyword">int</span> res;</span><br><span class="line">	ss&gt;&gt;res;</span><br><span class="line">	vis[res]=flag;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>{</span><br><span class="line">	<span class="keyword">if</span>(vis[x]) cout&lt;&lt;<span class="string">"-"</span>&lt;&lt;x&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	<span class="keyword">else</span> cout&lt;&lt;x&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	<span class="keyword">if</span>(vis[y]) cout&lt;&lt;<span class="string">"-"</span>&lt;&lt;y&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">else</span> cout&lt;&lt;y&lt;&lt;endl;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> i)</span></span>{</span><br><span class="line">	<span class="keyword">if</span>(vis[x]){</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;p[i].cnt1;j++){</span><br><span class="line">			<span class="keyword">if</span>(p[i].girl[j]==x) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		}</span><br><span class="line">	}<span class="keyword">else</span>{</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;p[i].cnt0;j++){</span><br><span class="line">			<span class="keyword">if</span>(p[i].boy[j]==x) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> i)</span></span>{</span><br><span class="line">	<span class="keyword">if</span>(vis[x]){</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;p[i].cnt0;j++){</span><br><span class="line">			sumn[p[i].boy[j]]+=<span class="number">1.0</span>/p[i].num;</span><br><span class="line">		}</span><br><span class="line">	}<span class="keyword">else</span>{</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;p[i].cnt1;j++){</span><br><span class="line">			sumn[p[i].girl[j]]+=<span class="number">1.0</span>/p[i].num;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++){</span><br><span class="line">		cin&gt;&gt;p[i].num;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;p[i].num;j++){</span><br><span class="line">			<span class="keyword">int</span> x;</span><br><span class="line">			x=<span class="built_in">read</span>();</span><br><span class="line">			<span class="keyword">if</span>(vis[x]){</span><br><span class="line">				p[i].girl.<span class="built_in">push_back</span>(x);</span><br><span class="line">				p[i].cnt1++;</span><br><span class="line">			}<span class="keyword">else</span>{</span><br><span class="line">				p[i].boy.<span class="built_in">push_back</span>(x);</span><br><span class="line">				p[i].cnt0++;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	a=<span class="built_in">read</span>();b=<span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++){</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">find</span>(a,i)) <span class="built_in">count</span>(a,i);</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">find</span>(b,i)) <span class="built_in">count</span>(b,i);</span><br><span class="line">	}</span><br><span class="line">	maxa=<span class="number">-1</span>;maxb=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		<span class="keyword">if</span>(vis[a]!=vis[i]) maxa=<span class="built_in">max</span>(maxa,sumn[i]);</span><br><span class="line">		<span class="keyword">else</span> maxb=<span class="built_in">max</span>(maxb,sumn[i]);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(sumn[a]==maxb&amp;&amp;sumn[b]==maxa) <span class="built_in">print</span>(a,b);</span><br><span class="line">	<span class="keyword">else</span>{</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">			<span class="keyword">if</span>(vis[a]!=vis[i]&amp;&amp;maxa==sumn[i]) <span class="built_in">print</span>(a,i);</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">			<span class="keyword">if</span>(vis[b]!=vis[i]&amp;&amp;maxb==sumn[i]) <span class="built_in">print</span>(b,i);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h2><p>说实话有些查找手写二分没必要，可以用<code>lower_bound()</code>和<code>upper_bound()</code>函数。当然手写二分的思路还是要有的。</p>
+<p>可以把<code>bound</code>理解为等于的边界，这两个函数都表示下界，<code>lower_bound()</code>是大于等于，<code>upper_bound()</code>是大于。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> pos=<span class="built_in">upper_bound</span>(s.<span class="built_in">begin</span>(),s.<span class="built_in">end</span>(),x)-s.<span class="built_in">begin</span>();</span><br></pre></td></tr></table></figure>
+<p>返回值是一个地址，指向待符合要求的位置，所以要减去数组首地址成为下标。</p>
+<p>查找范围是 左闭右开。不存在则返回 end 位置。</p>
+<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><p>天梯赛好像就比较喜欢讨论家庭伦理，总是会出现家庭祖先这类的题目，有时候就得用上并查集的操作。</p>
+<p>并查集数据结构并不难理解，说白了就是维护一个祖先数组<code>f[i]</code>，<code>int find(int x)</code>压缩路径，以及<code>Uinion(int x,int y)</code>合并两个集合。</p>
+<p>实际应用上并查集还会有一些附加属性，比如同时维护一个并查集的大小(集合中的元素个数)，还有一些集合元素的总体值，这些值要怎么合并也是需要考虑的。</p>
+<p><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805046380707840/problems/994805068539215872">家庭房产数</a></p>
+<p>也是一道初看时没头绪的模拟题。通过做这道题也总结了一些问题的解决方法：</p>
+<ol>
+<li>编号不是从0或1开始的连续值时如何处理？</li>
+<li>并查集合并过程中如果一个部分的一些需要合并的值还未录入，怎么用原地的办法让它最后能合并?</li>
+</ol>
+<p>关于第一个问题，最简单的办法就是直接开一个大数组，用题目给出的编号作为数组的下标。因为编号只有4位数其实还可以接受。</p>
+<p>但是如果编号数特别长的话可以考虑用map进行映射，将题目中给定的编号和程序中实际存储的数组下标进行一个绑定。</p>
+<p>这样做就可以直接通过题设编号来找到实际存储的位置。有时候这个编号要输出，所以编号要存在结构体里。</p>
+<p>还有就是一个结点，给出和它有关系的结点编号，可能这个编号是不会在行首出现的，这时候我们就得看到一个，就构建一个映射关系，差不多就是这种操作。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">map&lt;string,<span class="keyword">int</span>&gt; q;</span><br><span class="line"><span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//看到编号str时</span></span><br><span class="line">q[str]=cnt++</span><br></pre></td></tr></table></figure>
+<p>然后第二个问题，涉及到并查集的合并操作。</p>
+<p>意思就是一开始 n 个点，每个点都会有一个权值，也可能权值是0，我们在合并的时候，要把所有的值也合并到祖宗结点那里。</p>
+<p>但是会有三种情况。</p>
+<ol>
+<li><p>先给各点权值，再给各点关系。</p>
+<p>这种情况下就直接给各点赋值，然后在uinion里把值送过去就行了。比较简单。</p>
+</li>
+<li><p>先给出结点关系再给各点权值。</p>
+<p>这种情况下就先建立关系，把并查集给创建好，然后把每个点的权值加到祖宗结点上。</p>
+</li>
+<li><p>给结点关系的过程中给各点权值。</p>
+<p>这种情况就比较复杂，建立关系的时候可能点的权值已经给出了，就得在union里加起来，也可能没给，所以在给出点的权值的时候要加到祖宗去。所以两种操作都得写。因为一开始我们都会初始化各点祖宗是自己，所以就把值加到祖宗上，如果祖宗已经找好了就正好放到祖宗上，没找好就放自己身上，然后就会随着并查集的创建自动就都加好了。</p>
+</li>
+</ol>
+<p>如果是用大数组直接把编号当下标，要设一个bool类型vis标记一下这个编号是否存在，因为初始化的时候直接所有都初始化了，就得标记一下。</p>
+<p>然后这题的话主要就是一个维护并查集以及合并各种值的操作，别的排序和计数什么的都比较简单。</p>
+<p>在用并查集的时候的一些思想，就假设一开始每个人都是一个家庭，然后家庭合并，就不用分人的结构体和家庭的结构体了。</p>
+<p>不用图的搜索是因为这题个体之间的关系就是同在一个集合里，两两间的关系不考虑，没必要存图。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="comment">//node family</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line">	<span class="keyword">int</span> cnt,minid;<span class="comment">//家庭人口数,最小成员编号 </span></span><br><span class="line">	<span class="keyword">double</span> sumn;<span class="comment">//总房产数 </span></span><br><span class="line">	<span class="keyword">double</span> area;<span class="comment">//总面积数</span></span><br><span class="line">	<span class="keyword">bool</span> vis;<span class="comment">//这个编号是否存在 </span></span><br><span class="line">}a[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(node x,node y)</span><br><span class="line">{</span><br><span class="line">	<span class="keyword">if</span>(x.area==y.area) <span class="keyword">return</span> x.minid&lt;y.minid;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> x.area&gt;y.area;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">100005</span>];<span class="comment">//并查集</span></span><br><span class="line">set&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">if</span>(x!=f[x]) <span class="keyword">return</span> f[x]=<span class="built_in">find</span>(f[x]);</span><br><span class="line">	<span class="keyword">return</span> f[x];</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> xid=<span class="built_in">find</span>(x);</span><br><span class="line">	<span class="keyword">int</span> yid=<span class="built_in">find</span>(y);</span><br><span class="line">	<span class="keyword">if</span>(xid==yid) <span class="keyword">return</span>;</span><br><span class="line">	f[yid]=xid;</span><br><span class="line">	a[xid].cnt+=a[yid].cnt;</span><br><span class="line">	a[xid].sumn+=a[yid].sumn;</span><br><span class="line">	a[xid].area+=a[yid].area;</span><br><span class="line">	a[xid].minid=<span class="built_in">min</span>(a[xid].minid,a[yid].minid);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(node x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">if</span>(x.minid&lt;<span class="number">1000</span>) cout&lt;&lt;<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(x.minid&lt;<span class="number">100</span>) cout&lt;&lt;<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(x.minid&lt;<span class="number">10</span>) cout&lt;&lt;<span class="number">0</span>;</span><br><span class="line">	cout&lt;&lt;x.minid&lt;&lt;<span class="string">" "</span>&lt;&lt;x.cnt&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.3lf %.3lf\n"</span>,x.sumn,x.area);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100005</span>;i++) f[i]=i,a[i].cnt=<span class="number">1</span>,a[i].minid=i;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> id,fid,mid,k,sid,sumn;</span><br><span class="line">	<span class="keyword">double</span> area;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	{</span><br><span class="line">		cin&gt;&gt;id;</span><br><span class="line">		a[id].vis=<span class="literal">true</span>;</span><br><span class="line">		cin&gt;&gt;fid&gt;&gt;mid;</span><br><span class="line">		<span class="keyword">if</span>(fid!=<span class="number">-1</span>)</span><br><span class="line">		{</span><br><span class="line">			a[fid].vis=<span class="literal">true</span>;</span><br><span class="line">			<span class="built_in">Union</span>(id,fid);</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(mid!=<span class="number">-1</span>)</span><br><span class="line">		{</span><br><span class="line">			a[mid].vis=<span class="literal">true</span>;</span><br><span class="line">			<span class="built_in">Union</span>(id,mid);</span><br><span class="line">		}</span><br><span class="line">		cin&gt;&gt;k;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)</span><br><span class="line">		{</span><br><span class="line">			cin&gt;&gt;sid;</span><br><span class="line">			a[sid].vis=<span class="number">1</span>;</span><br><span class="line">			<span class="built_in">Union</span>(id,sid);</span><br><span class="line">		}</span><br><span class="line">		cin&gt;&gt;sumn&gt;&gt;area;</span><br><span class="line">		a[f[id]].sumn+=sumn;</span><br><span class="line">		a[f[id]].area+=area;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100005</span>;i++) <span class="built_in">find</span>(i);</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100005</span>;i++) <span class="keyword">if</span>(a[i].vis) s.<span class="built_in">insert</span>(f[i]);</span><br><span class="line">	cout&lt;&lt;s.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">	vector&lt;node&gt; ans;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it:s)</span><br><span class="line">	{</span><br><span class="line">		a[it].area/=a[it].cnt;</span><br><span class="line">		a[it].sumn/=a[it].cnt*<span class="number">1.0</span>;</span><br><span class="line">		ans.<span class="built_in">push_back</span>(a[it]);</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">sort</span>(ans.<span class="built_in">begin</span>(),ans.<span class="built_in">end</span>());</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ans.<span class="built_in">size</span>();i++) <span class="built_in">print</span>(ans[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="二叉树的构建"><a href="#二叉树的构建" class="headerlink" title="二叉树的构建"></a>二叉树的构建</h2><p>通过前序中序或中序后序构建二叉树。</p>
+<p>也不是说不会，就是不太熟练，所以想来敲个板子。</p>
+<p>命名规范一下，每次想名字都想好久。<code>p[i]</code>表示前序，<code>m[i]</code>表示中序,<code>b[i]</code>表示后序。从1开始存，默认0的位置位空结点，比较方便。写一个<code>int build()</code>函数返回根节点的下标。<code>l[i]</code>表示位置 i 的左孩子的位置,<code>r[i]</code>表示位置 i 的右孩子的位置。因为后序和前序的根结点比较好找，所以放的是前后序中的位置。只要调用一次<code>build</code>就把二叉树创建好了。</p>
+<p>找中序的根结点位置，创建左右子树，返回根节点坐标。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> ml,<span class="keyword">int</span> mr,<span class="keyword">int</span> bl,<span class="keyword">int</span> br)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> pos;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=ml;i&lt;=mr;i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span>(m[i]==b[br])</span><br><span class="line">		{</span><br><span class="line">			pos=i-ml;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(pos&gt;<span class="number">0</span>) l[br]=<span class="built_in">build</span>(ml,ml+pos<span class="number">-1</span>,bl,bl+pos<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">if</span>(ml+pos&lt;mr) r[br]=<span class="built_in">build</span>(ml+pos+<span class="number">1</span>,mr,bl+pos,br<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">return</span> br;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>七年
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xduqinian.github.io/2022/04/05/CodingLog/" title="第七届团体程序设计天梯赛">https://xduqinian.github.io/2022/04/05/CodingLog/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c4/" rel="tag"><i class="fa fa-tag"></i> c4</a>
+              <a href="/tags/code/" rel="tag"><i class="fa fa-tag"></i> code</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/04/regex/" rel="prev" title="c++ 正则化表达式">
+      <i class="fa fa-chevron-left"></i> c++ 正则化表达式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/03/learnGit/" rel="next" title="关于用github进行版本控制的一些学习">
+      关于用github进行版本控制的一些学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside id="id-sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B5%9B%E5%90%8E%E6%84%9F%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">赛后感想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="nav-number">2.</span> <span class="nav-text">注意的东西</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="nav-number">2.1.</span> <span class="nav-text">字符串处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%92%8C%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="nav-number">2.2.</span> <span class="nav-text">哈夫曼树和哈夫曼编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AA%E6%9D%B0%E7%89%B9%E6%96%AF%E6%8B%89%E6%B1%82%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF"><span class="nav-number">2.3.</span> <span class="nav-text">迪杰特斯拉求单源最短路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%AD%98%E5%9B%BE"><span class="nav-number">2.3.1.</span> <span class="nav-text">二维数组存图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-%E5%92%8C-Vector"><span class="nav-number">2.4.</span> <span class="nav-text">Set 和 Vector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map-%E5%92%8C-multimap"><span class="nav-number">2.5.</span> <span class="nav-text">map 和 multimap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%A4%A7%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.6.</span> <span class="nav-text">关于大模拟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AF%BB%E5%85%A5%EF%BC%9F%E5%A6%82%E4%BD%95%E8%BE%93%E5%87%BA%EF%BC%9F"><span class="nav-number">2.6.1.</span> <span class="nav-text">如何读入？如何输出？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E8%BE%93%E5%85%A5%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">2.6.2.</span> <span class="nav-text">如何存储输入的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E6%88%90%E4%BB%BB%E5%8A%A1%E9%9C%80%E8%A6%81%E5%93%AA%E4%BA%9B%E6%AD%A5%E9%AA%A4%EF%BC%9F%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%BF%99%E4%BA%9B%E6%AD%A5%E9%AA%A4%EF%BC%9F"><span class="nav-number">2.6.3.</span> <span class="nav-text">完成任务需要哪些步骤？如何实现这些步骤？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">2.6.4.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">2.6.4.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">2.6.4.2.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code"><span class="nav-number">2.6.4.3.</span> <span class="nav-text">code</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86"><span class="nav-number">2.7.</span> <span class="nav-text">二分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="nav-number">2.8.</span> <span class="nav-text">并查集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="nav-number">2.9.</span> <span class="nav-text">二叉树的构建</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="七年"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">七年</p>
+  <div class="site-description" itemprop="description"><p>自由之思想，独立之精神。</p></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+    <script type="text/javascript">
+          var url = document.location.pathname;
+          var folderName = url.substr(1, url.length - 2)
+          console.log(folderName);
+
+          var listPostUrl = [
+            "/" + folderName + "/" + "post-banner.png",
+            "/" + folderName + "/" + "post-banner.jpg",
+          ];
+
+          var nSuccessCount = 0;
+          var nResponceCount = 0;
+          function OnHttpResponse(bSuccess, strUrl) {
+            console.log("OnHttpResponse: " + bSuccess + ", " + strUrl);
+            nResponceCount++;
+            if(nSuccessCount > 0){
+              return;
+            }
+            if(bSuccess) {
+              nSuccessCount++;
+              document.getElementById("id-sidebar").style.backgroundImage = "url(" + strUrl + ")";
+            }
+            if(nResponceCount >= listPostUrl.length && nSuccessCount <= 0){
+            // 使用默认图
+              document.getElementById("id-sidebar").style.backgroundImage = "url(/images/back.jpg)";
+            }
+          }
+
+          function changeBanner(strPostUrl, nIndex){
+            console.log("try to load" + strPostUrl);
+            var xmlhttp;
+            if (window.XMLHttpRequest){
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp=new XMLHttpRequest();
+            }
+            else{
+            // IE6, IE5 浏览器执行代码
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function(){
+              if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                OnHttpResponse(true, strPostUrl);
+              } 
+              else {
+                OnHttpResponse(false, strPostUrl);
+              }
+            }
+            xmlhttp.open("HEAD",strPostUrl,true);
+            xmlhttp.send();
+          }
+
+          listPostUrl.forEach(changeBanner);
+        </script>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七年</span>
+</div>
+<script>
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                alert("请填写正确的昵称和邮箱！");
+            }
+        }
+    })
+</script>
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"SDOdmTg1DNWPtubU8vHwAgvc-gzGzoHsz","app_key":"W8Ua1Axo0hdnNKFUjqETYeBB","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'SDOdmTg1DNWPtubU8vHwAgvc-gzGzoHsz',
+      appKey     : 'W8Ua1Axo0hdnNKFUjqETYeBB',
+      placeholder: "Just go go",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+<script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
+

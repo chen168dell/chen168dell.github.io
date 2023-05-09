@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/snow2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/snow1.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xduqinian.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="软件工程学概述。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程概论（一）">
+<meta property="og:url" content="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/index.html">
+<meta property="og:site_name" content="年雨冰季的博客">
+<meta property="og:description" content="软件工程学概述。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/瀑布.png">
+<meta property="og:image" content="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/原型.png">
+<meta property="og:image" content="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/螺旋.png">
+<meta property="og:image" content="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/极限.png">
+<meta property="og:image" content="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/极限2.png">
+<meta property="article:published_time" content="2022-03-01T00:36:56.000Z">
+<meta property="article:modified_time" content="2022-03-14T13:05:42.469Z">
+<meta property="article:author" content="七年">
+<meta property="article:tag" content="软件工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/瀑布.png">
+
+<link rel="canonical" href="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>软件工程概论（一） | 年雨冰季的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="id-header-inner" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <!-- 添加了id，后面改变css样式用 -->
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">年雨冰季的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-友链">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+   <!-- 改变css样式 -->
+    <script type="text/javascript">
+      var url = document.location.pathname;
+      var folderName = url.substr(1, url.length - 2)
+      console.log(folderName);
+
+      var listPostUrl = [
+        "/" + folderName + "/" + "post-banner.png",
+        "/" + folderName + "/" + "post-banner.jpg",
+      ];
+
+      var nSuccessCount = 0;
+      var nResponceCount = 0;
+      function OnHttpResponse(bSuccess, strUrl) {
+        console.log("OnHttpResponse: " + bSuccess + ", " + strUrl);
+        nResponceCount++;
+        if(nSuccessCount > 0){
+          return;
+        }
+        if(bSuccess) {
+          nSuccessCount++;
+          document.getElementById("id-header-inner").style.backgroundImage = "url(" + strUrl + ")";
+        }
+        if(nResponceCount >= listPostUrl.length && nSuccessCount <= 0){
+        // 使用默认图
+          document.getElementById("id-header-inner").style.backgroundImage = "url(/images/back.jpg)";
+        }
+      }
+
+      function changeBanner(strPostUrl, nIndex){
+        console.log("try to load" + strPostUrl);
+        var xmlhttp;
+        if (window.XMLHttpRequest){
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+        }
+        else{
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function(){
+          if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            OnHttpResponse(true, strPostUrl);
+          } 
+          else {
+            OnHttpResponse(false, strPostUrl);
+          }
+        }
+        xmlhttp.open("HEAD",strPostUrl,true);
+        xmlhttp.send();
+      }
+
+      listPostUrl.forEach(changeBanner);
+    </script>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="七年">
+      <meta itemprop="description" content="<p>自由之思想，独立之精神。</p>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="年雨冰季的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          软件工程概论（一）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-01 08:36:56" itemprop="dateCreated datePublished" datetime="2022-03-01T08:36:56+08:00">2022-03-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-14 21:05:42" itemprop="dateModified" datetime="2022-03-14T21:05:42+08:00">2022-03-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">软件工程概论</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/" class="post-meta-item leancloud_visitors" data-flag-title="软件工程概论（一）" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>软件工程学概述。</p>
+<span id="more"></span>
+<h1 id="软件含义及软件危机"><a href="#软件含义及软件危机" class="headerlink" title="软件含义及软件危机"></a>软件含义及软件危机</h1><h2 id="软件的含义"><a href="#软件的含义" class="headerlink" title="软件的含义"></a>软件的含义</h2><p>研制了软件设计和生产的方法与工具，从而为“程序加文档”。</p>
+<ul>
+<li>文档是软件质的部分。</li>
+<li>程序是文档代码化的表现形式。</li>
+</ul>
+<p>《计算机软件保护条例》第二条规定，本条例所称计算机软件，是指计算机程序及其有关文档。</p>
+<p>“程序 + 文档 + 数据”</p>
+<p>随着计算机技术的发展，对软件不同阶段有不同的认识：</p>
+<ul>
+<li><strong>初级阶段：</strong>主要硬件的设计和生产，软件（程序）处于从属地位。</li>
+<li><strong>中级阶段：</strong>对软件的要求越来越高，软件（文档加程序）在计算机系统中比重越来越大。</li>
+<li><strong>当今阶段：</strong>软件硬件相互依存。</li>
+</ul>
+<p><strong>软件的正确含义：</strong></p>
+<ol>
+<li>运行时，能提供所要求功能和性能的指令或计算机程序集合。</li>
+<li>程序能满意地处理信息的数据逻辑。</li>
+<li>程序员能满意地按照预定的商业逻辑进行处理。</li>
+<li>描述程序功能需求以及程序如何操作和使用所需要的文档。</li>
+</ol>
+<h2 id="软件的特点"><a href="#软件的特点" class="headerlink" title="软件的特点"></a>软件的特点</h2><ol>
+<li>表现形式不同。</li>
+<li>生产方式不同。</li>
+<li>要求不同。</li>
+</ol>
+<h2 id="软件的分类与介绍"><a href="#软件的分类与介绍" class="headerlink" title="软件的分类与介绍"></a>软件的分类与介绍</h2><h3 id="系统软件"><a href="#系统软件" class="headerlink" title="系统软件"></a>系统软件</h3><ul>
+<li>系统软件是指<strong>控制和协调</strong>计算机及外部设备，支持<strong>应用软件</strong>开发和运行的系统，是无需用户干预的各种程序的集合。</li>
+<li>主要功能：<strong>调度、监控和维护</strong>计算机系统；负责<strong>管理</strong>计算机系统中各种独立的硬件，使得它们可以协调工作。</li>
+</ul>
+<h4 id="系统软件的特点"><a href="#系统软件的特点" class="headerlink" title="系统软件的特点"></a>系统软件的特点</h4><ul>
+<li>与硬件有很强的交互性。</li>
+<li>对资源共享进行调度管理。</li>
+<li>能解决并发操作处理中存在的协调问题。</li>
+<li>其中的数据结构复杂，外部接口多样化，便于用户反复使用。</li>
+</ul>
+<h4 id="系统软件类别"><a href="#系统软件类别" class="headerlink" title="系统软件类别"></a>系统软件类别</h4><ul>
+<li>操作系统：DOS、WINDOWS、UNIX和Linux、Netware 等。Android、IOS。</li>
+<li>语言处理程序：汇编语言汇编器、C 语言编译、链接器等。</li>
+<li>数据库管理：Access、Oracle、Sybase、DB2 和 informix。</li>
+<li>辅助程序。</li>
+</ul>
+<h3 id="应用软件"><a href="#应用软件" class="headerlink" title="应用软件"></a>应用软件</h3><p>应用软件是为满足用户不同领域、不同问题的应用需求而提供的那部分软件。它可以拓宽计算机系统的应用领域，放大硬件的功能。</p>
+<h3 id="嵌入式软件"><a href="#嵌入式软件" class="headerlink" title="嵌入式软件"></a>嵌入式软件</h3><p>嵌入式软件就是基于嵌入式系统设计的软件，它也是计算机软件的一种，同样由程序及其文档组成，是嵌入式系统的重要组成部分。</p>
+<h2 id="软件危机"><a href="#软件危机" class="headerlink" title="软件危机"></a>软件危机</h2><p>软件危机的真正含义：在计算机软件开发和维护过程中所遇到的一系列严重问题。</p>
+<p>怎样满足对软件日益增长的需求？（如何开发软件）</p>
+<p>如何维护数量不断膨胀的已有软件？</p>
+<h3 id="软件危机的具体表现"><a href="#软件危机的具体表现" class="headerlink" title="软件危机的具体表现"></a>软件危机的具体表现</h3><ul>
+<li>对软件开发成本和进度的估计常常不准确。</li>
+<li>用户对“已完成的”软件系统不满意的现象经常发生。</li>
+<li>软件产品的质量往往靠不住。</li>
+<li>软件常常不可维护：不能适应新环境，程序错误不容易纠正。</li>
+<li>没有适当的文档资料。</li>
+<li>软件成本占总成本的比例逐步上升。</li>
+<li>软件开发速度跟不上计算机应用普及深入的趋势。</li>
+</ul>
+<h3 id="产生软件危机的原因"><a href="#产生软件危机的原因" class="headerlink" title="产生软件危机的原因"></a>产生软件危机的原因</h3><p>两个方面：</p>
+<p>软件本身的特点。</p>
+<p>软件开发与维护的方法不正确：忽视软件需求分析的重要性、忽视软件文档的重要性。</p>
+<ul>
+<li>软件是逻辑部件，开发质量较难评价。</li>
+<li>软件规模庞大，有技术问题，也有管理方法问题。</li>
+<li>早期开发的个体化，忽视需求分析。</li>
+<li>对前期工作不能忽视，提高软件质量的关键。</li>
+<li>严重性：在软件开发的不同阶段修改付出的代价（后期比前期高 2 - 3 个数量级），软件维护是极端艰巨复杂的工作（占55%-70%）。</li>
+</ul>
+<h3 id="解决软件危机的途径"><a href="#解决软件危机的途径" class="headerlink" title="解决软件危机的途径"></a>解决软件危机的途径</h3><ul>
+<li>完整的配置组成：软件是程序、数据及相关文档的完整集合。</li>
+<li>组织良好、管理严密、各类人员协同配合、共同完成的工程项目。</li>
+<li>使用成功技术和方法，并研究探索更好更有效的技术和方法。</li>
+<li>应该开发和使用更好的软件工具。</li>
+</ul>
+<h1 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h1><h2 id="软件工程的介绍"><a href="#软件工程的介绍" class="headerlink" title="软件工程的介绍"></a>软件工程的介绍</h2><p>软件工程是指导计算机软件开发和维护的一门工程学科。采用<strong>工程的概念、原理、技术和方法</strong>来开发与维护软件，把经过时间考验而证明正确的管理技术和当前能够得到的最好的技术方法结合起来，以<strong>经济地</strong>开发出高质量的软件并有效地<strong>维护它</strong>，这就是软件工程。</p>
+<p><strong>软件工程具有七个代表性的本质特性：</strong></p>
+<ul>
+<li>软件工程关注于大型程序的构造。</li>
+<li>软件工程的中心课题是控制复杂性。</li>
+<li>软件经常变化。</li>
+<li>开发软件的效率非常重要。</li>
+<li>和谐地合作是开发软件的关键。</li>
+<li>软件必须有效地支持它的用户。</li>
+<li>在软件工程领域是由具有一种文化背景的人替具有另一种文化背景的人创造产品。</li>
+</ul>
+<h2 id="软件工程的基本原理"><a href="#软件工程的基本原理" class="headerlink" title="软件工程的基本原理"></a>软件工程的基本原理</h2><p>确保软件产品质量和开发效率的原理的最小集合。</p>
+<ol>
+<li>用分阶段的生命周期计划严格管理。在软件整个生命周期中应该制定并严格执行6类计划：项目概要计划、里程碑计划、项目控制计划、产品控制计划、验证计划、运行维护计划。</li>
+<li>坚持进行阶段评审。</li>
+<li>实行严格的产品控制。</li>
+<li>采用现代程序设计技术。</li>
+<li>结果应能清楚地审查。</li>
+<li>开发小组人员应少而精。<strong>核心思路</strong>：“人员素质高，人员数量少”。</li>
+<li>承认不断改进软件工程实践的必要性。</li>
+</ol>
+<h2 id="软件工程方法学"><a href="#软件工程方法学" class="headerlink" title="软件工程方法学"></a>软件工程方法学</h2><p>通常把在软件生命周期全过程中使用的一整套技术方法的集合称为方法学，也成为范型。</p>
+<ol>
+<li>传统方法学（生命周期方法学或结构化范型）</li>
+<li>面向对象方法学</li>
+</ol>
+<p><strong>软件工程过程具有如下特性：</strong></p>
+<ul>
+<li>可理解性</li>
+<li>可见性</li>
+<li>可支持性</li>
+<li>可接受性</li>
+<li>可靠性</li>
+<li>健壮性</li>
+<li>可维护性</li>
+<li>速度</li>
+</ul>
+<h1 id="软件生命周期各阶段的基本任务"><a href="#软件生命周期各阶段的基本任务" class="headerlink" title="软件生命周期各阶段的基本任务"></a>软件生命周期各阶段的基本任务</h1><h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><p>“<strong>要解决的问题是什么？</strong>”</p>
+<p>在问题定义阶段应提出：</p>
+<ul>
+<li>问题性质报告</li>
+<li>工程目标和规模报告</li>
+<li>对系统的实际用户和使用部门进行访问调查，澄清含糊不清的地方后得到双方满意的文档。</li>
+</ul>
+<h2 id="可行性研究"><a href="#可行性研究" class="headerlink" title="可行性研究"></a>可行性研究</h2><p>“<strong>对上一个阶段所确定的问题有行得通的解决办法。</strong>”</p>
+<ul>
+<li>确定工程规模和目标。</li>
+<li>估计系统成本和收益。</li>
+</ul>
+<p>该阶段实际上是工程的一个核心阶段，对双方都是讨价还价的心理战，直接关系到整个系统研发的成本与利益。</p>
+<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>“<strong>为解决问题，目标系统必须做什么？</strong>”</p>
+<p>需求分析阶段必须交出完整准确的系统逻辑模型经用户确认后，再进入下一个阶段，应防止和克服急于着手进行具体设计。</p>
+<h2 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h2><p>“<strong>应该如何解决这个问题？</strong>”</p>
+<p>应考虑几种可能的解决方案：</p>
+<ul>
+<li><strong>低成本解决方案</strong>：系统只能完成最少必要的工作，不做额外工作。</li>
+<li><strong>中成本的解决方案</strong>：除很好地完成预定的任务，使用方便，而且还有附加的额外功能。</li>
+<li><strong>高成本的“十全十美”的系统</strong>：该系统具有用户可能希望有的所有功能和特点。</li>
+</ul>
+<h2 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h2><p>总体设计以比较抽象概括的方式提出了解决问题的办法，详细设计的任务是把解法具体化。具体的任务是设计出程序的详细规格说明，通过用 HIPO 图（层次图加输入/处理/输出图）或 PDL 语言（过程设计语言）描述详细设计结果。</p>
+<h2 id="编码和单元测试"><a href="#编码和单元测试" class="headerlink" title="编码和单元测试"></a>编码和单元测试</h2><p>程序员根据系统要求，选定开发平台把详细设计的结果翻译成选定的语言书写程序，并仔细测试编写的每个模块。</p>
+<h2 id="综合测试"><a href="#综合测试" class="headerlink" title="综合测试"></a>综合测试</h2><p>通过各种类型的测试使软件达到预定的要求。</p>
+<p><strong>基本测试：</strong></p>
+<ul>
+<li><strong>集成测试：</strong>根据软件结构，把模块按某种选定的策略装配起来，装配过程中对程序进行必要测试。</li>
+<li><strong>验收测试</strong>：按照规格说明书的规定，对目标系统进行验收。</li>
+</ul>
+<h2 id="软件维护"><a href="#软件维护" class="headerlink" title="软件维护"></a>软件维护</h2><ul>
+<li>改正性维护</li>
+<li>适应性维护</li>
+<li>完善性维护</li>
+<li>预防性维护</li>
+</ul>
+<h1 id="软件生存期模型"><a href="#软件生存期模型" class="headerlink" title="软件生存期模型"></a>软件生存期模型</h1><h2 id="软件生存期的瀑布模型"><a href="#软件生存期的瀑布模型" class="headerlink" title="软件生存期的瀑布模型"></a>软件生存期的瀑布模型</h2><p><img src="/images/loading.jpg" data-original="/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/瀑布.png" alt="瀑布"></p>
+<h3 id="瀑布模型的特点"><a href="#瀑布模型的特点" class="headerlink" title="瀑布模型的特点"></a>瀑布模型的特点</h3><p>1970年，W.Royce 提出瀑布模型。</p>
+<ul>
+<li><strong>特征</strong>：活动的输入来自上一活动的输出。</li>
+<li><strong>适合</strong>：需求明确的任务。</li>
+<li><strong>优点缺点</strong></li>
+</ul>
+<h2 id="快速原型模型"><a href="#快速原型模型" class="headerlink" title="快速原型模型"></a>快速原型模型</h2><p>通过快速构建一个可在计算机上运行的原型系统，让用户试用该原型系统并收集用户反馈意见，获取用户真实需求。（用户界面通常是快速原型的一个关键部分。）</p>
+<p><img src="/images/loading.jpg" data-original="/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/原型.png" alt="原型"></p>
+<p><strong>原型法的显著特点是</strong>：逐步完善、逐步发展的原则。</p>
+<p><strong>优缺点</strong></p>
+<h2 id="软件生存期的螺旋模型"><a href="#软件生存期的螺旋模型" class="headerlink" title="软件生存期的螺旋模型"></a>软件生存期的螺旋模型</h2><p><strong>螺旋模型的基本思想：</strong>增加了风险分析过程的快速原型模型。螺旋模型主要适用于内部开发的大规模软件项目。</p>
+<p><strong>螺旋模型的优点</strong></p>
+<p><img src="/images/loading.jpg" data-original="/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/螺旋.png" alt="螺旋"></p>
+<h2 id="敏捷过程与极限编程"><a href="#敏捷过程与极限编程" class="headerlink" title="敏捷过程与极限编程"></a>敏捷过程与极限编程</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>敏捷开发是一种以人为核心、迭代、循序渐进的开发方法。</p>
+<p><strong>在敏捷开发中，软件项目的构建被切分成多个子项目，各个子项目的成果都经过测试，具备集成和可运行的特征。</strong></p>
+<p>换言之，就是把一个大项目分为多个相互联系，但也可以独立运行的小项目，并分别完成，在此过程中软件一直处于可使用状态。</p>
+<p>典型的敏捷过程模型有 XP（极限编程）、FDD（特性驱动开发）、Scrum 以及敏捷的统一过程（AUP）等。</p>
+<p>敏捷过程分为三个部分：</p>
+<ul>
+<li>敏捷项目管理</li>
+<li>敏捷需求分析</li>
+<li>敏捷软件开发</li>
+</ul>
+<h3 id="敏捷开发的价值观"><a href="#敏捷开发的价值观" class="headerlink" title="敏捷开发的价值观"></a>敏捷开发的价值观</h3><p>个体和交互<strong>胜过</strong>过程和工具。</p>
+<p>可以工作的软件<strong>胜过</strong>面面俱到的文档。</p>
+<p>客户合作<strong>胜过</strong>合同谈判。</p>
+<p>响应变化<strong>胜过</strong>遵循计划。</p>
+<p>虽然右项也有价值，但是认为左项具有更大的价值。</p>
+<h3 id="敏捷原则"><a href="#敏捷原则" class="headerlink" title="敏捷原则"></a>敏捷原则</h3><ul>
+<li>尽早的、持续的交付有价值的条件。</li>
+<li>欢迎改变需求。</li>
+<li>经常性地交付可以工作的软件。</li>
+<li>业务人员和开发人员共同工作。</li>
+<li>围绕被激励起来的个体来构建项目。</li>
+<li>面对面的交谈。</li>
+<li>工作的软件是首要的进度度量标准。</li>
+<li>敏捷过程提倡可持续的开发速度。</li>
+<li>优秀的技能和好的设计会增强敏捷能力。</li>
+<li>最好的构架、需求和设计出自于自组织的团队。</li>
+<li>工作方面进行反省，然后相应地对自己的行为进行调整。</li>
+<li>敏捷是彻底革命的。</li>
+<li>敏捷是“一类”过程。</li>
+<li>敏捷仅仅是一个软件过程。</li>
+<li>迭代就是敏捷。</li>
+<li>敏捷是反文档的。</li>
+<li>为了敏捷而敏捷。</li>
+<li>敏捷是自由的，无约束的。</li>
+</ul>
+<h3 id="极限编程"><a href="#极限编程" class="headerlink" title="极限编程"></a>极限编程</h3><p><img src="/images/loading.jpg" data-original="/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/极限.png" alt="极限"></p>
+<p>极限编程把软件开发过程重新定义为聆听、测试、编码、设计的<strong>迭代循环过程</strong>。</p>
+<p>确立了测试、编码、重构（设计）的软件开发管理思路。</p>
+<h4 id="极限编程重点"><a href="#极限编程重点" class="headerlink" title="极限编程重点"></a>极限编程重点</h4><p><strong>客户参与</strong>：极限编程把客户加入到开发的团队中，参与日常开发与沟通。</p>
+<p><strong>敏捷开发</strong>：敏捷开发追求合作响应变化，缩短版本的发布周期，简单设计，快速测试，及时展现，及时反馈。</p>
+<p><strong>追求价值</strong>：极限编程追求<strong>沟通、简单、反馈、勇气</strong>。</p>
+<p><img src="/images/loading.jpg" data-original="/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/极限2.png" alt="极限2"></p>
+<h3 id="极限编程的实践"><a href="#极限编程的实践" class="headerlink" title="极限编程的实践"></a>极限编程的实践</h3><ol>
+<li>小版本发布</li>
+<li>规划游戏</li>
+<li>现场客户</li>
+<li>隐喻</li>
+<li>简单设计</li>
+<li>重构</li>
+<li>测试驱动开发</li>
+<li>继续集成</li>
+<li>结对编程</li>
+<li>代码共有</li>
+<li>编码标准</li>
+<li>40小时工作</li>
+</ol>
+<h2 id="微软过程"><a href="#微软过程" class="headerlink" title="微软过程"></a>微软过程</h2><p>微软过程的每一个生命周期发布一个递进的软件版本，各生命周期持续、快速地循环。每个生命周期分为五个阶段：</p>
+<ul>
+<li>计划阶段</li>
+<li>构想阶段</li>
+<li>开发阶段</li>
+<li>稳定阶段</li>
+<li>发布阶段</li>
+</ul>
+<h1 id="技术审查和管理审查"><a href="#技术审查和管理审查" class="headerlink" title="技术审查和管理审查"></a>技术审查和管理审查</h1><h2 id="进行审查和复审的必要性"><a href="#进行审查和复审的必要性" class="headerlink" title="进行审查和复审的必要性"></a>进行审查和复审的必要性</h2><ul>
+<li>由于人的认识不可能百分之百的符合客观实际。</li>
+<li>前一阶段的成果是后一阶段的工作基础。造成错误积累，软件错误的积累与放大效应。</li>
+</ul>
+<h2 id="技术审查的标准和方法"><a href="#技术审查的标准和方法" class="headerlink" title="技术审查的标准和方法"></a>技术审查的标准和方法</h2><p><strong>审查小组</strong>：</p>
+<p>通常由技术专家组组成审查小组。</p>
+<p>组长：组织和领导技术审查的全过程，安排会议日程，分发文档，主持会议，确保全面公正。</p>
+<p>作者：是课题组长，责任是回答技术上的问题。</p>
+<p>评审员：也是由技术专家担任。</p>
+<p><strong>审查过程</strong>：</p>
+<p>准备简要介绍情况，阅读被审查的文档，开审查会，返工复查（审查会一般不超过90分钟）。</p>
+<h1 id="软件风险"><a href="#软件风险" class="headerlink" title="软件风险"></a>软件风险</h1><h2 id="软件风险的定义"><a href="#软件风险的定义" class="headerlink" title="软件风险的定义"></a>软件风险的定义</h2><p>软件风险的严格定义还存在许多争议，但在风险中包含了两个特性：</p>
+<ul>
+<li>不确定性：刻化风险的事件可能发生，也可能不发生。</li>
+<li>损失：如果风险变成了现实，就会产生恶性后果和损失。</li>
+</ul>
+<h2 id="软件风险的种类"><a href="#软件风险的种类" class="headerlink" title="软件风险的种类"></a>软件风险的种类</h2><p>软件风险的种类有两种：一般性风险和特定产品的风险。</p>
+<ul>
+<li>一般性风险对每一个软件项目而言都是一个潜在的威胁。</li>
+<li>特定产品的风险只有那些对当前项目的技术、人员、及环境非常了解的人才能识别出来。</li>
+</ul>
+<h2 id="软件风险的识别"><a href="#软件风险的识别" class="headerlink" title="软件风险的识别"></a>软件风险的识别</h2><p>识别风险的一个方法是建立风险条目检查表，该表可以用于识别风险。</p>
+<p>“<strong>如果你不主动攻击风险，风险就会主动攻击你</strong>”</p>
+<h3 id="产品规模风险"><a href="#产品规模风险" class="headerlink" title="产品规模风险"></a>产品规模风险</h3><ul>
+<li>对于估算出的产品规模的信任度如何？</li>
+<li>是否以程序、文件或事务处理的数目来估算产品规模？</li>
+</ul>
+<ul>
+<li>产品的规模与以前的产品规模平均值的偏差百分比是多少？</li>
+<li>产品创新或使用的数据库大小如何？</li>
+<li>产品的用户数是多少？</li>
+<li>产品需求改变了多少？</li>
+<li>复用的软件有多少？</li>
+</ul>
+<h3 id="商业影响风险"><a href="#商业影响风险" class="headerlink" title="商业影响风险"></a>商业影响风险</h3><ul>
+<li>本产品对公司的收入有何影响？</li>
+<li>本产品是否得到公司高级管理层的重视？</li>
+<li>交付期限是否合理？</li>
+<li>将会使用本产品的用户数及本产品是否与用户的需要相符合？</li>
+<li>本产品必须能与之互操作的其他产品/系统的数目？</li>
+<li>最终用户水平如何？</li>
+<li>必须产生并交付给用户的产品文档的量与质如何？</li>
+<li>政府对本产品开发的约束？</li>
+<li>延迟交付所造成的成本消耗是多少？</li>
+<li>产品缺陷所造成的成本消耗是多少？</li>
+</ul>
+<h3 id="客户相关的风险"><a href="#客户相关的风险" class="headerlink" title="客户相关的风险"></a>客户相关的风险</h3><ul>
+<li>你以前是否曾与该客户合作过</li>
+<li>该客户是否很清楚需要什么，他是否花时间把需求写出来</li>
+<li>该客户是否同意花时间召开正式的需求收集会议，以确定项目范围</li>
+<li>该客户是否愿意建立与开发者之间的快速通信渠道</li>
+<li>该客户是否愿意参加复审工作</li>
+<li>该客户是否具有该产品领域的技术素养</li>
+<li>该客户是否愿意让你的人来做他们的工作，即，当你的人在做具体的技术工作时，该客户是否会坚持在旁边监视</li>
+<li>该客户是否了解软件过程</li>
+</ul>
+<h3 id="技术风险"><a href="#技术风险" class="headerlink" title="技术风险"></a>技术风险</h3><ul>
+<li>该技术对于你的组织而言是新的吗？</li>
+<li>客户的需求是否需要创建新的算法或输入、输出技术？</li>
+<li>软件是否需要是否使用新的或未经证实的硬件接口？</li>
+<li>待开发软件是否需要与开发商提供未经证实的软件产品接口？</li>
+<li>待开发软件是否需要与其功能及性能均未在本领域中得到证实的数据库系统接口？</li>
+<li>产品的需求中是否要求采用特定的用户界面？</li>
+<li>产品的需求中是否要求开发某些程序构件，这些构件与你的组织以前所开发过的构件完全不同？</li>
+<li>需求中是否要求使用新的分析、设计、或测试方法？</li>
+<li>需求中是否要求使用非传统的软件开发方法，如形式化方法、基于AI的方法、以及人工神经网络？</li>
+</ul>
+<h3 id="开发环境风险"><a href="#开发环境风险" class="headerlink" title="开发环境风险"></a>开发环境风险</h3><ul>
+<li>是否有可用的软件项目管理工具</li>
+<li>是否有可用的软件过程管理工具</li>
+<li>是否有可用的分析及设计工具</li>
+<li>分析及设计工具是否支持适用于待建造产品的方法</li>
+<li>是否有可用的编译器或代码生成器，且适用于待建造产品</li>
+<li>是否有可用的测试工具、且适用于待建造产品</li>
+<li>是否有可用的软件配置管理工具</li>
+<li>环境是否利用了数据库或数据仓库</li>
+<li>是否所有软件工具都是彼此集成的</li>
+<li>项目组的成员是否已经接受过关于工具的培训</li>
+<li>是否有相关的专家能够回答关于每个工具的培训</li>
+<li>工具的联机帮助及文档是否适当</li>
+</ul>
+<h3 id="与人员数目及经验相关的风险"><a href="#与人员数目及经验相关的风险" class="headerlink" title="与人员数目及经验相关的风险"></a>与人员数目及经验相关的风险</h3><ul>
+<li>是否有最优秀的人员可用</li>
+<li>人员在技术上是否配套</li>
+<li>是否有足够的人员可用</li>
+<li>开发人员是否能够自始自终的参加整个项目的工作</li>
+<li>项目中是否有一些人员只能部分时间工作</li>
+<li>开发人员对自己的工作是否有正确的期望</li>
+<li>开发人员是否接受过必要的培训</li>
+<li>开发人员的流动是否仍能保证工作的连续性</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>七年
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xduqinian.github.io/2022/03/01/%E8%BD%AF%E5%B7%A5%E6%A6%82%E8%AE%BA1/" title="软件工程概论（一）">https://xduqinian.github.io/2022/03/01/软工概论1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 软件工程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/28/crypto4/" rel="prev" title="应用密码学与网络安全（四）">
+      <i class="fa fa-chevron-left"></i> 应用密码学与网络安全（四）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/14/DataBase/" rel="next" title="2021期末数据库复习总结">
+      2021期末数据库复习总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside id="id-sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%90%AB%E4%B9%89%E5%8F%8A%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA"><span class="nav-number">1.</span> <span class="nav-text">软件含义及软件危机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">软件的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">软件的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%86%E7%B1%BB%E4%B8%8E%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.3.</span> <span class="nav-text">软件的分类与介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">系统软件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">系统软件的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E7%B1%BB%E5%88%AB"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">系统软件类别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.3.2.</span> <span class="nav-text">应用软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">嵌入式软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA"><span class="nav-number">1.4.</span> <span class="nav-text">软件危机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA%E7%9A%84%E5%85%B7%E4%BD%93%E8%A1%A8%E7%8E%B0"><span class="nav-number">1.4.1.</span> <span class="nav-text">软件危机的具体表现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A7%E7%94%9F%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.4.2.</span> <span class="nav-text">产生软件危机的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E8%BD%AF%E4%BB%B6%E5%8D%B1%E6%9C%BA%E7%9A%84%E9%80%94%E5%BE%84"><span class="nav-number">1.4.3.</span> <span class="nav-text">解决软件危机的途径</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">软件工程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.1.</span> <span class="nav-text">软件工程的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">软件工程的基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95%E5%AD%A6"><span class="nav-number">2.3.</span> <span class="nav-text">软件工程方法学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%90%84%E9%98%B6%E6%AE%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%BB%E5%8A%A1"><span class="nav-number">3.</span> <span class="nav-text">软件生命周期各阶段的基本任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">问题定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6"><span class="nav-number">3.2.</span> <span class="nav-text">可行性研究</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">3.3.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.4.</span> <span class="nav-text">总体设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.5.</span> <span class="nav-text">详细设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E5%92%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">3.6.</span> <span class="nav-text">编码和单元测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E6%B5%8B%E8%AF%95"><span class="nav-number">3.7.</span> <span class="nav-text">综合测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4"><span class="nav-number">3.8.</span> <span class="nav-text">软件维护</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%AD%98%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">软件生存期模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%AD%98%E6%9C%9F%E7%9A%84%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text">软件生存期的瀑布模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">4.1.1.</span> <span class="nav-text">瀑布模型的特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.2.</span> <span class="nav-text">快速原型模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%AD%98%E6%9C%9F%E7%9A%84%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.3.</span> <span class="nav-text">软件生存期的螺旋模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B"><span class="nav-number">4.4.</span> <span class="nav-text">敏捷过程与极限编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">4.4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E7%9A%84%E4%BB%B7%E5%80%BC%E8%A7%82"><span class="nav-number">4.4.2.</span> <span class="nav-text">敏捷开发的价值观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E5%8E%9F%E5%88%99"><span class="nav-number">4.4.3.</span> <span class="nav-text">敏捷原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B"><span class="nav-number">4.4.4.</span> <span class="nav-text">极限编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B%E9%87%8D%E7%82%B9"><span class="nav-number">4.4.4.1.</span> <span class="nav-text">极限编程重点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E9%99%90%E7%BC%96%E7%A8%8B%E7%9A%84%E5%AE%9E%E8%B7%B5"><span class="nav-number">4.4.5.</span> <span class="nav-text">极限编程的实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E8%BD%AF%E8%BF%87%E7%A8%8B"><span class="nav-number">4.5.</span> <span class="nav-text">微软过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E5%AE%A1%E6%9F%A5%E5%92%8C%E7%AE%A1%E7%90%86%E5%AE%A1%E6%9F%A5"><span class="nav-number">5.</span> <span class="nav-text">技术审查和管理审查</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%A4%8D%E5%AE%A1%E7%9A%84%E5%BF%85%E8%A6%81%E6%80%A7"><span class="nav-number">5.1.</span> <span class="nav-text">进行审查和复审的必要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E5%AE%A1%E6%9F%A5%E7%9A%84%E6%A0%87%E5%87%86%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">技术审查的标准和方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%A3%8E%E9%99%A9"><span class="nav-number">6.</span> <span class="nav-text">软件风险</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%A3%8E%E9%99%A9%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">6.1.</span> <span class="nav-text">软件风险的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%A3%8E%E9%99%A9%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="nav-number">6.2.</span> <span class="nav-text">软件风险的种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%A3%8E%E9%99%A9%E7%9A%84%E8%AF%86%E5%88%AB"><span class="nav-number">6.3.</span> <span class="nav-text">软件风险的识别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E8%A7%84%E6%A8%A1%E9%A3%8E%E9%99%A9"><span class="nav-number">6.3.1.</span> <span class="nav-text">产品规模风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E4%B8%9A%E5%BD%B1%E5%93%8D%E9%A3%8E%E9%99%A9"><span class="nav-number">6.3.2.</span> <span class="nav-text">商业影响风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%9B%B8%E5%85%B3%E7%9A%84%E9%A3%8E%E9%99%A9"><span class="nav-number">6.3.3.</span> <span class="nav-text">客户相关的风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E9%A3%8E%E9%99%A9"><span class="nav-number">6.3.4.</span> <span class="nav-text">技术风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%A3%8E%E9%99%A9"><span class="nav-number">6.3.5.</span> <span class="nav-text">开发环境风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E4%BA%BA%E5%91%98%E6%95%B0%E7%9B%AE%E5%8F%8A%E7%BB%8F%E9%AA%8C%E7%9B%B8%E5%85%B3%E7%9A%84%E9%A3%8E%E9%99%A9"><span class="nav-number">6.3.6.</span> <span class="nav-text">与人员数目及经验相关的风险</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="七年"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">七年</p>
+  <div class="site-description" itemprop="description"><p>自由之思想，独立之精神。</p></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+    <script type="text/javascript">
+          var url = document.location.pathname;
+          var folderName = url.substr(1, url.length - 2)
+          console.log(folderName);
+
+          var listPostUrl = [
+            "/" + folderName + "/" + "post-banner.png",
+            "/" + folderName + "/" + "post-banner.jpg",
+          ];
+
+          var nSuccessCount = 0;
+          var nResponceCount = 0;
+          function OnHttpResponse(bSuccess, strUrl) {
+            console.log("OnHttpResponse: " + bSuccess + ", " + strUrl);
+            nResponceCount++;
+            if(nSuccessCount > 0){
+              return;
+            }
+            if(bSuccess) {
+              nSuccessCount++;
+              document.getElementById("id-sidebar").style.backgroundImage = "url(" + strUrl + ")";
+            }
+            if(nResponceCount >= listPostUrl.length && nSuccessCount <= 0){
+            // 使用默认图
+              document.getElementById("id-sidebar").style.backgroundImage = "url(/images/back.jpg)";
+            }
+          }
+
+          function changeBanner(strPostUrl, nIndex){
+            console.log("try to load" + strPostUrl);
+            var xmlhttp;
+            if (window.XMLHttpRequest){
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp=new XMLHttpRequest();
+            }
+            else{
+            // IE6, IE5 浏览器执行代码
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function(){
+              if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                OnHttpResponse(true, strPostUrl);
+              } 
+              else {
+                OnHttpResponse(false, strPostUrl);
+              }
+            }
+            xmlhttp.open("HEAD",strPostUrl,true);
+            xmlhttp.send();
+          }
+
+          listPostUrl.forEach(changeBanner);
+        </script>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七年</span>
+</div>
+<script>
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                alert("请填写正确的昵称和邮箱！");
+            }
+        }
+    })
+</script>
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"SDOdmTg1DNWPtubU8vHwAgvc-gzGzoHsz","app_key":"W8Ua1Axo0hdnNKFUjqETYeBB","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'SDOdmTg1DNWPtubU8vHwAgvc-gzGzoHsz',
+      appKey     : 'W8Ua1Axo0hdnNKFUjqETYeBB',
+      placeholder: "Just go go",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+<script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
+
