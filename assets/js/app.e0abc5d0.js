@@ -11240,14 +11240,14 @@
                     return t("div", {class: "prev-page"}, [t("button", {
                         on: {click: this.$parent.handlePreClick},
                         class: {disabled: !(this.$parent.internalCurrentPage > 1)}
-                    }, [t("i", {class: "fa fa-angle-left", attrs: {"aria-hidden": "true"}}), " Previous"])])
+                    }, [t("i", {class: "fa fa-angle-left", attrs: {"aria-hidden": "true"}}), " 上一页"])])
                 }
             }, Next: {
                 render: function (t) {
                     return t("div", {class: "next-page"}, [t("button", {
                         on: {click: this.$parent.handleNextClick},
                         class: {disabled: this.$parent.internalCurrentPage === this.$parent.internalPageCount || 0 === this.$parent.internalPageCount}
-                    }, ["Next ", t("i", {class: "fa fa-angle-right", attrs: {"aria-hidden": "true"}})])])
+                    }, ["下一页 ", t("i", {class: "fa fa-angle-right", attrs: {"aria-hidden": "true"}})])])
                 }
             }, Pager: dl
         },
