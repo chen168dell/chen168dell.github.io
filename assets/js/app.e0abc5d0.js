@@ -11064,7 +11064,7 @@
             appId: "eytWDTcVXxD6jB2TPPIFVljq-gzGzoHsz",
             appKey: "sJRhu6ftXLC0eNR4vsjo3Euy",
             logo: "/assets/img/logo.jpg",
-            background: "/assets/img/1.png",
+            background: "https://chen168dell.github.io/assets/img/background1.jpg",
             externalLinks: [{
                 text: "CodePen",
                 link: "https://github.com/chen168dell",
