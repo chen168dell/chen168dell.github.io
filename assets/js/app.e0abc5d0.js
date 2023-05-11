@@ -11066,8 +11066,8 @@
             logo: "/assets/img/logo.jpg",
             background: "https://chen168dell.github.io/assets/img/background1.jpg",
             externalLinks: [{
-                text: "CodePen",
-                link: "https://github.com/chen168dell",
+                text: "翻译器",
+                link: "https://mp.weixin.qq.com/s/yZQE2DbTVMj5ZZhaF-ZH0Q",
                 target: "_blank"
             }, {text: "GitHub", link: "https://github.com/chen168dell/chen168dell.github.io", target: "_blank"}],
             footer: {
