@@ -3732,12 +3732,12 @@ div[class~=language-php]:before {
 }
 
 .blog-description h1 {
-    font-size: 46px;
-    color: #94bcda
+    font-size: 60px;
+    color: #ff3d00
 }
 
 .blog-description p {
-    color: #d1d1d1;
+    color: #00e0eb;
     text-align: center;
     line-height: 26px
 }
